@@ -1,0 +1,45 @@
+VERSION="$1"
+BASEIMAGEVERSION="$2"
+
+echo "*"
+echo "**"
+echo "***"
+echo "****"
+echo "*****"
+echo "******"
+echo "*******"
+echo "********"
+echo "*********"
+echo "**********"
+echo "***********"
+echo "************"
+echo "*************"
+echo "** REBUILDING VERSION $VERSION"
+echo "** USING BASE IMAGE $BASEIMAGEVERSION"
+echo "*************"
+
+# Start by getting the latest version of the official drupal image
+docker pull drupal:"$BASEIMAGEVERSION"
+
+# Rebuild the entire thing
+docker build -f="Dockerfile-$VERSION" -t dcycle/drupal:"$VERSION" .
+docker build -f="Dockerfile-$VERSION" -t dcycle/drupal:"$VERSION.$DATE" .
+docker push dcycle/drupal:"$VERSION"
+docker push dcycle/drupal:"$VERSION.$DATE"
+
+echo "*************"
+echo "** DONE REBUILDING VERSION $VERSION"
+echo "** DONE USING BASE IMAGE $BASEIMAGEVERSION"
+echo "*************"
+echo "************"
+echo "***********"
+echo "**********"
+echo "*********"
+echo "********"
+echo "*******"
+echo "******"
+echo "*****"
+echo "****"
+echo "***"
+echo "**"
+echo "*"
