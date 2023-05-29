@@ -24,7 +24,7 @@ MAJORVERSION='1'
 VERSION='1.0'
 
 # Start by getting the latest version of the official drupal image
-docker pull php
+docker pull node
 # Rebuild the entire thing
 docker build --no-cache -t dcycle/"$PROJECT":"$VERSION" .
 docker build -t dcycle/"$PROJECT":"$MAJORVERSION" .

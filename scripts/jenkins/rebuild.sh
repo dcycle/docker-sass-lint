@@ -18,11 +18,11 @@ echo "Created Droplet at $IP"
 sleep 90
 
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
-  root@"$IP" "mkdir -p docker-phpunit-job"
+  root@"$IP" "mkdir -p docker-sass-lint-job"
 scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
   ~/.dcycle-docker-credentials.sh \
   root@$IP:~/.dcycle-docker-credentials.sh
 scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
-  -r * root@"$IP":docker-phpunit-job
+  -r * root@"$IP":docker-sass-lint-job
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
-  root@"$IP" "cd docker-phpunit-job && ls -lah && ./scripts/rebuild.sh"
+  root@"$IP" "cd docker-sass-lint-job && ls -lah && ./scripts/rebuild.sh"
