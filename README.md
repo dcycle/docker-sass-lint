@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/dcycle/docker-sass-lint.svg?style=svg)](https://circleci.com/gh/dcycle/docker-sass-lint)
 
-Lint Javascript with [SASS lint](https://www.npmjs.com/package/sass-lint).
+Lint SASS with [SASS lint](https://www.npmjs.com/package/sass-lint).
 
 For example:
 
